@@ -1,3 +1,5 @@
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb5pi6cAU1CJXad4OKhBgUBbnpx4BjJXfn_w&s" alt="Project Screenshot" width="200">
+
 # scheming — mine your Claude Code history into a self-improving procedure library
 
 `scheming` is a Claude Code plugin that mines **your own** session history into a
@@ -14,11 +16,8 @@ Requires **Claude Code** and **Python 3.8+** available as `python` on your PATH.
 
 Local (development / trying it out):
 ```
-claude --plugin-dir /path/to/finalized
+claude --plugin-dir /path/to/plugin
 ```
-Distribution is via a plugin marketplace — see
-[Claude Code plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
-Validate a checkout with `claude plugin validate /path/to/finalized`.
 
 ## Lifecycle
 
