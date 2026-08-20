@@ -1,0 +1,10 @@
+{
+  "name": "scheming",
+  "description": "Mine your own Claude Code history into a searchable, self-improving library of proven procedures, and recall the right one mid-session. Private by design: your library is built from your own sessions and never leaves your machine.",
+  "version": "0.1.0",
+  "author": {
+    "name": "aiden"
+  },
+  "keywords": ["workflows", "memory", "retrieval", "self-improving", "mining"],
+  "license": "MIT"
+}

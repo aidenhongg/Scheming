@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.tmp
+.scheming/
+
+# local-only design reference; not shipped in the published plugin
+ARCHITECTURE.md
+INTERFACES.md

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "scheming",
+  "description": "Mine your own Claude Code history into a searchable, self-improving library of proven procedures, and recall the right one mid-session.",
+  "owner": {
+    "name": "aiden"
+  },
+  "plugins": [
+    {
+      "name": "scheming",
+      "description": "Mine your own Claude Code history into a searchable, self-improving library of proven procedures, and recall the right one mid-session. Private by design: your library is built from your own sessions and never leaves your machine.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
