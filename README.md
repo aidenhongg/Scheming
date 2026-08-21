@@ -10,9 +10,7 @@ reactions — which solution to lead with, and surfaces it right when it applies
 **Private by design.** Your library is built from your own `~/.claude/projects`
 and never leaves your machine — nothing is bundled, and nothing is shared.
 
-**This will consume 1M+ Sonnet tokens on setup so just b aware ❤️**
-
-## Install
+## This will consume 1M+ Sonnet tokens on setup so please be aware
 
 Requires **Claude Code** and **Python 3.8+** available as `python` on your PATH.
 
