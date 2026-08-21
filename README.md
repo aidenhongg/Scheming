@@ -10,7 +10,7 @@ reactions — which solution to lead with, and surfaces it right when it applies
 **Private by design.** Your library is built from your own `~/.claude/projects`
 and never leaves your machine — nothing is bundled, and nothing is shared.
 
-## WARNING : This will use like 1M Sonnet tokens on setup
+## This will use like 1M Sonnet tokens on setup so just b aware of that ❤️
 
 ## Install
 
