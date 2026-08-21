@@ -57,6 +57,33 @@ To skip sessions you have already mined, check existing `mechanism_evidence`
 values — each carries its `[sid=<session>]`, so a session already represented can
 be deprioritized. `--all` lists everything; default is the top decile (min 1).
 
+## Model discipline (cost) — Sonnet is the ceiling for the whole pipeline
+
+Steps 1, 2, 7 are deterministic scripts (ingest / triage / groups): **no model,
+free.** A mine run's token cost is dominated by the trace-reading + extraction of
+steps 3–4, which fan out one subagent per top session. **Run those extractor
+subagents on Sonnet — never let them inherit an Opus session.** Reading a trace and
+filling the entry schema is a Sonnet-class job; Opus here costs ~5× for no
+measurable gain in yield. Concretely:
+
+- Spawn each extractor with the Agent tool and pass **`model: "sonnet"`** explicitly
+  (do not omit it — omitting inherits the parent, which may be Opus). If you delegate
+  via `claude -p` instead, pass **`--model sonnet`**. Use **Haiku** for any purely
+  mechanical pass (reformatting, dedup).
+- **Sonnet is the ceiling for every model call in this pipeline** — do not spawn
+  Opus workers, and prefer running the orchestration itself on a Sonnet session.
+- Provenance stays intact because verification is deterministic (grep the quote
+  byte-exact against the source), not model-judged — so a cheaper extractor costs
+  nothing in correctness.
+
+(A past run mined 7 dense sessions on Opus subagents at ~1.4M tokens; the same work
+on Sonnet is the intended cost.)
+
+For a transcript too large to read raw (they reach tens of MB), first reduce it to a
+signal-only **digest** — assistant decision text, tool-call name+command previews,
+and error-flagged tool results, kept byte-exact — then hand the digest to the Sonnet
+extractor so quotes stay verbatim for `mechanism_evidence`.
+
 ## 3. Read the traces — not the prompts
 
 For each top session, **read the full tool-call trace** (the JSONL transcript at
